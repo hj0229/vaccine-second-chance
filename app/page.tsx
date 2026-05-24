@@ -381,6 +381,25 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="px-6 py-20 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-4xl">
+          <SectionHeading label="Privacy" title="個人情報の取り扱いについて" />
+          <div className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm sm:p-8">
+            <div className="space-y-5 text-base leading-8 text-slate-700 sm:text-lg">
+              <p>
+                フォームに入力いただいたお名前、メールアドレス、ご所属、関心内容などの情報は、本プロジェクトからの連絡、協力体制づくり、活動準備のためにのみ使用します。
+              </p>
+              <p>
+                取得した情報を、本人の同意なく第三者に提供することはありません。
+              </p>
+              <p>
+                なお、本プロジェクトは現在準備段階であり、個別の医療相談、接種可否の判断、接種費用補助の申請受付は行っていません。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-teal-800 px-6 py-20 text-white sm:px-8 lg:px-10">
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-sm font-semibold tracking-[0.18em] text-teal-100 uppercase">
