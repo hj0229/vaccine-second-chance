@@ -31,6 +31,18 @@ const supporters = [
 
 const referenceLinks = [
   {
+    label: "厚生労働省：麻しんについて",
+    href: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles/index.html",
+  },
+  {
+    label: "厚生労働省：MRワクチンについて",
+    href: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00002.html",
+  },
+  {
+    label: "JIHS：麻しんとは",
+    href: "https://id-info.jihs.go.jp/diseases/a/measles/010/measles-intro.html",
+  },
+  {
     label: "厚生労働省：予防接種情報",
     href: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/index.html",
   },
@@ -46,9 +58,9 @@ const referenceLinks = [
 
 const firstStepItems = [
   {
-    title: "HPVワクチン費用補助",
+    title: "成人MRワクチン・キャッチアップ支援",
     description:
-      "まずはHPVワクチンを中心に、成人後に本人の意思で接種を希望する方への費用補助を小規模に始めることを目指します。",
+      "小児期・思春期にMRワクチンを2回接種する機会を逃し、成人後に本人の意思で接種を希望する方への費用補助を小規模に始めることを目指します。",
   },
   {
     title: "透明な運営体制づくり",
@@ -229,7 +241,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading label="First Step" title="最初に目指すこと">
             <p>
-              本基金の中心となる活動は、成人後に本人の意思で接種を希望する方への接種費用補助です。接種歴や希望内容の整理は、費用補助を安全かつ適切に行い、医療機関で相談しやすくするための補助的な支援として位置づけています。
+              麻疹の国内報告が増加している状況を踏まえ、本基金では、まず成人MRワクチン・キャッチアップ支援から小規模に開始することを検討しています。小児期・思春期にMRワクチンを2回接種する機会を逃し、成人後に本人の意思で接種を希望する方のうち、医療機関で接種適応を確認したうえで、費用負担が障壁となっている方を支えることを目指します。
             </p>
           </SectionHeading>
           <div className="grid gap-5 md:grid-cols-3">
@@ -248,7 +260,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-6 rounded-lg border border-emerald-100 bg-white/85 p-5 text-sm leading-7 text-slate-600">
-            団体が診療行為や個別の接種可否判断を行うわけではありません。接種の可否、接種するワクチンの種類、接種間隔、抗体検査の要否、副反応リスクについては、必ず医療機関で判断します。
+            本プロジェクトは、定期接種対象児への接種機会を妨げないことを前提に進めます。団体が診療行為や個別の接種可否判断を行うわけではありません。接種の可否、接種するワクチンの種類、接種間隔、抗体検査の要否などについては、必ず医療機関で相談してください。
           </p>
         </div>
       </section>
@@ -257,7 +269,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading label="Future Support" title="将来的に目指す支援">
             <p>
-              費用補助だけでなく、接種を希望する方が医療機関で相談しやすくなるよう、接種歴・既往歴・希望するワクチンを整理した「キャッチアップ接種相談シート」の作成支援も検討しています。
+              費用補助だけでなく、接種を希望する方が医療機関で相談しやすくなるよう、接種歴・既往歴・希望するワクチンを整理した「キャッチアップ接種相談シート」の作成支援も検討しています。MRワクチンでの小規模な運用を整えたうえで、将来的にはHPVワクチンなど他のワクチンへの支援拡大も検討します。
             </p>
           </SectionHeading>
           <div className="grid gap-5 md:grid-cols-3">
