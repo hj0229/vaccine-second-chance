@@ -1,4 +1,4 @@
-const formUrl = "https://forms.gle/gRzb4GDZGFuQtowT7";
+const formUrl = "https://forms.gle/1aEDxBHTyjaXoR4C8";
 const email = "info@vaccine-second-chance.org";
 
 const policies = [
@@ -58,9 +58,9 @@ const referenceLinks = [
 
 const firstStepItems = [
   {
-    title: "成人MRワクチン・キャッチアップ支援",
+    title: "成人MR/HPVワクチン・キャッチアップ支援",
     description:
-      "小児期・思春期にMRワクチンを2回接種する機会を逃し、成人後に本人の意思で接種を希望する方への費用補助を小規模に始めることを目指します。",
+      "小児期・思春期にMRワクチンまたはHPVワクチンの接種機会を逃し、成人後に本人の意思で接種を希望する方への相談導線づくりを小規模に始めます。",
   },
   {
     title: "透明な運営体制づくり",
@@ -89,6 +89,39 @@ const futureSupportItems = [
     title: "費用補助への接続",
     description:
       "医療機関で接種可否や必要回数が確認された後、条件に応じて費用補助につなげる仕組みを目指します。",
+  },
+];
+
+const pilotDetails = [
+  {
+    title: "0期パイロットの目的",
+    items: [
+      "成人MRワクチンまたはHPVワクチンのキャッチアップ接種を希望する方が、医療機関で相談しやすくなる流れを小規模に検証します。",
+      "接種歴や希望内容の整理、相談先へのつなぎ方、将来的な費用補助の運用条件を確認します。",
+    ],
+  },
+  {
+    title: "募集対象",
+    items: [
+      "小児期・思春期にMRワクチンまたはHPVワクチンの接種機会を逃し、成人後に本人の意思で接種を検討している方。",
+      "医療者、広報、会計、法務・個人情報保護などの観点から、月1回程度の資料確認や相談に協力できる方。",
+    ],
+  },
+  {
+    title: "対象外・注意点",
+    items: [
+      "本サイトは診断・接種可否の医学的判断を行うものではありません。",
+      "実際の接種可否、必要回数、接種間隔、抗体検査の要否は医療機関で相談してください。",
+      "現時点では寄付受付・接種費用補助申請は準備中です。",
+    ],
+  },
+  {
+    title: "応募後の流れ",
+    items: [
+      "Googleフォームまたはメールで関心内容を送ってください。",
+      "内容を確認し、必要に応じてメールで追加確認やオンライン相談の日程調整を行います。",
+      "0期では、個別支援を確約するのではなく、支援体制を整えるための事前確認から始めます。",
+    ],
   },
 ];
 
@@ -151,16 +184,67 @@ function SectionHeading({
   );
 }
 
-function CtaButton({ className = "" }: { className?: string }) {
+function CtaLink({
+  href,
+  children,
+  variant = "primary",
+  external = false,
+}: {
+  href: string;
+  children: React.ReactNode;
+  variant?: "primary" | "secondary" | "light";
+  external?: boolean;
+}) {
+  const variants = {
+    primary:
+      "bg-teal-700 text-white shadow-lg shadow-teal-900/10 hover:bg-teal-800 focus-visible:outline-teal-700",
+    secondary:
+      "border border-teal-200 bg-white text-teal-800 shadow-sm hover:bg-teal-50 focus-visible:outline-teal-700",
+    light:
+      "bg-white text-teal-800 shadow-none hover:bg-teal-50 focus-visible:outline-white",
+  };
+
   return (
     <a
-      href={formUrl}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`inline-flex min-h-12 items-center justify-center rounded-full bg-teal-700 px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-teal-900/10 transition hover:bg-teal-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700 sm:text-base ${className}`}
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className={`inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-center text-sm font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-4 sm:text-base ${variants[variant]}`}
     >
-      協力者として関心を伝える
+      {children}
     </a>
+  );
+}
+
+function CtaGroup({ inverted = false }: { inverted?: boolean }) {
+  return (
+    <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+      <CtaLink href={formUrl} external variant={inverted ? "light" : "primary"}>
+        MR/HPVワクチン接種を相談する
+      </CtaLink>
+      <CtaLink href={formUrl} external variant={inverted ? "light" : "secondary"}>
+        医療者・広報・会計などで協力する
+      </CtaLink>
+      <CtaLink href={`mailto:${email}`} variant={inverted ? "light" : "secondary"}>
+        問い合わせる
+      </CtaLink>
+    </div>
+  );
+}
+
+function CtaNotice({ inverted = false }: { inverted?: boolean }) {
+  return (
+    <div
+      className={`rounded-lg border p-5 text-sm leading-7 ${
+        inverted
+          ? "border-teal-300/50 bg-teal-900/20 text-teal-50"
+          : "border-teal-100 bg-white/80 text-slate-600"
+      }`}
+    >
+      <p>本サイトは診断・接種可否の医学的判断を行うものではありません。</p>
+      <p>実際の接種可否は医療機関で相談してください。</p>
+      <p>現時点では寄付受付・接種費用補助申請は準備中です。</p>
+    </div>
   );
 }
 
@@ -187,11 +271,12 @@ export default function Home() {
             <p className="mt-8 max-w-3xl text-lg leading-9 text-slate-700 sm:text-xl">
               本人の意思によらず予防接種の機会を逃した人が、成人後に自分の意思で接種を希望したとき、その一歩を社会で支える仕組みを準備しています。
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-              <CtaButton />
-              <p className="text-sm leading-7 text-slate-500">
-                寄付受付・接種費用補助の申請受付は、現時点では開始していません。
-              </p>
+            <p className="mt-5 max-w-3xl rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm sm:text-lg">
+              第0期では、MRワクチン・HPVワクチンの接種機会を逃した成人の方から、小規模に相談を受け付けています。
+            </p>
+            <div className="mt-10 space-y-5">
+              <CtaGroup />
+              <CtaNotice />
             </div>
           </div>
         </div>
@@ -217,6 +302,56 @@ export default function Home() {
                 {item}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-b from-white to-sky-50 px-6 py-20 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading label="Pilot 0" title="0期パイロット募集">
+            <p>
+              第0期では、MRワクチン・HPVワクチンの接種機会を逃した成人の方から、小規模に相談を受け付けています。公開募集として支援を始める前に、少人数の関心登録と協力者の助言をもとに、相談導線、個人情報の扱い、将来的な費用補助の運用を確認する段階です。
+            </p>
+          </SectionHeading>
+          <div className="mb-8 rounded-lg border border-teal-100 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">
+              なぜMR/HPVから始めるのか
+            </h3>
+            <p className="mt-3 text-base leading-8 text-slate-700">
+              MRワクチンは、国内で麻しん報告が増加している状況を受け、接種歴が不明な方や2回接種を完了していない可能性がある成人が、医療機関で相談しやすくなる導線を作るために対象とします。HPVワクチンは、過去の情報不足や接種控えの影響で接種機会を逃した方が、成人後に本人の意思で接種を検討できるようにするために対象とします。そのため第0期では、まずMRワクチン・HPVワクチンから相談導線を検証します。
+            </p>
+          </div>
+          <div className="grid gap-5 md:grid-cols-2">
+            {pilotDetails.map((detail) => (
+              <div
+                key={detail.title}
+                className="rounded-lg border border-sky-100 bg-white p-6 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {detail.title}
+                </h3>
+                <ul className="mt-4 space-y-3 text-base leading-8 text-slate-700">
+                  {detail.items.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-600" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-lg border border-teal-100 bg-white p-6 shadow-sm">
+            <h3 className="text-lg font-semibold text-slate-900">
+              0期パイロットへの関わり方
+            </h3>
+            <p className="mt-3 text-base leading-8 text-slate-700">
+              相談・支援対象候補としての関心登録、医療者・広報・会計などでの協力、一般的な問い合わせを分けて受け付けています。Googleフォームは同じURLを使用し、内容を確認してこちらから連絡します。
+            </p>
+            <div className="mt-6 space-y-5">
+              <CtaGroup />
+              <CtaNotice />
+            </div>
           </div>
         </div>
       </section>
@@ -287,7 +422,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading label="First Step" title="最初に目指すこと">
             <p>
-              麻疹の国内報告が増加している状況を踏まえ、本基金では、まず成人MRワクチン・キャッチアップ支援から小規模に開始することを検討しています。小児期・思春期にMRワクチンを2回接種する機会を逃し、成人後に本人の意思で接種を希望する方のうち、医療機関で接種適応を確認したうえで、費用負担が障壁となっている方を支えることを目指します。
+              国内で麻しん報告が増加している状況を受け、接種歴が不明な方やMRワクチンの2回接種を完了していない可能性がある成人が、医療機関で相談しやすくなる導線を作ります。あわせて、過去の情報不足や接種控えの影響でHPVワクチンの接種機会を逃した方が、成人後に本人の意思で接種を検討できる相談導線を検証します。
             </p>
           </SectionHeading>
           <div className="grid gap-5 md:grid-cols-3">
@@ -315,7 +450,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading label="Future Support" title="将来的に目指す支援">
             <p>
-              費用補助だけでなく、接種を希望する方が医療機関で相談しやすくなるよう、接種歴・既往歴・希望するワクチンを整理した「キャッチアップ接種相談シート」の作成支援も検討しています。MRワクチンでの小規模な運用を整えたうえで、将来的にはHPVワクチンなど他のワクチンへの支援拡大も検討します。
+              費用補助だけでなく、接種を希望する方が医療機関で相談しやすくなるよう、接種歴・既往歴・希望するワクチンを整理した「キャッチアップ接種相談シート」の作成支援も検討しています。第0期ではMRワクチン・HPVワクチンで小規模な相談導線を整え、将来的には他のワクチンへの支援拡大も検討します。
             </p>
           </SectionHeading>
           <div className="grid gap-5 md:grid-cols-3">
@@ -455,10 +590,11 @@ export default function Home() {
             お問い合わせ
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-teal-50 sm:text-lg">
-            協力に関心のある方は、Googleフォームからご連絡ください。メールでのお問い合わせも受け付けています。
+            相談・支援対象候補としての関心登録、医療者・広報・会計などでの協力、その他のお問い合わせを受け付けています。
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-5">
-            <CtaButton className="bg-white text-teal-800 shadow-none hover:bg-teal-50 focus-visible:outline-white" />
+            <CtaGroup inverted />
+            <CtaNotice inverted />
             <a
               href={`mailto:${email}`}
               className="text-base font-semibold text-white underline decoration-teal-200 underline-offset-4"
