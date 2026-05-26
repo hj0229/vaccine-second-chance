@@ -92,6 +92,24 @@ const futureSupportItems = [
   },
 ];
 
+const activityPrinciples = [
+  {
+    title: "理念をぶらさない",
+    description:
+      "誰かを責めるのではなく、子どもの頃には選べなかった人が、成人後に選び直せる社会を目指します。",
+  },
+  {
+    title: "一人で抱え込まない",
+    description:
+      "医学・会計・法務・個人情報管理などの協力者とともに、透明性のある運営体制を整えます。",
+  },
+  {
+    title: "小さく始めて実績を積む",
+    description:
+      "まずは小規模な費用補助から始め、活動実績を公開しながら、賛同者とともに発展させていきます。",
+  },
+];
+
 const representativeMessage = [
   "私は都内の病院で働く小児科医です。",
   "これまで診療の中で、ワクチンで防げたかもしれない感染症によって重症化し、命の危険にさらされる子どもたちを見てきました。",
@@ -213,6 +231,34 @@ export default function Home() {
               ))}
             </div>
           </blockquote>
+        </div>
+      </section>
+
+      <section className="px-6 py-20 sm:px-8 lg:px-10">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading label="Project Policy" title="活動方針">
+            <p>
+              本プロジェクトは、特定の保護者や考え方を非難するものではありません。子どもの頃には予防接種を自分で選ぶことができなかった人が、成人後に自分の意思で接種を希望したとき、その選択を社会で支えることを目的としています。
+            </p>
+            <p className="mt-4">
+              まずは、医学・会計・法務・個人情報管理の面で協力者を募り、透明性のある運営体制を整えます。そのうえで、小規模な接種費用補助から開始し、活動実績を積み重ねながら、将来的な任意団体化・NPO法人化も視野に入れて進めます。
+            </p>
+          </SectionHeading>
+          <div className="grid gap-5 md:grid-cols-3">
+            {activityPrinciples.map((item) => (
+              <div
+                key={item.title}
+                className="rounded-lg border border-teal-100 bg-white p-6 shadow-sm"
+              >
+                <p className="text-lg font-semibold text-slate-900">
+                  {item.title}
+                </p>
+                <p className="mt-3 text-base leading-8 text-slate-700">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
