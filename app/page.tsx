@@ -39,12 +39,12 @@ const referenceLinks = [
     href: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00002.html",
   },
   {
-    label: "厚生労働省：HPVワクチンについて",
-    href: "https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou28/index.html",
+    label: "JIHS：麻しんとは",
+    href: "https://id-info.jihs.go.jp/diseases/a/measles/010/measles-intro.html",
   },
   {
-    label: "厚生労働省：HPVキャッチアップ接種について",
-    href: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou/hpv_catch-up-vaccination.html",
+    label: "厚生労働省：予防接種情報",
+    href: "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/index.html",
   },
   {
     label: "日本小児科学会：予防接種情報",
@@ -58,19 +58,19 @@ const referenceLinks = [
 
 const firstStepItems = [
   {
-    title: "MR・HPV初期パイロット",
+    title: "成人MRワクチン・キャッチアップ支援",
     description:
-      "MRワクチンまたはHPVワクチンの接種を希望する方のうち、費用負担が障壁となっている1〜3名を対象に、小規模な費用補助から始めることを目指します。",
+      "小児期・思春期にMRワクチンを2回接種する機会を逃し、成人後に本人の意思で接種を希望する方への費用補助を小規模に始めることを目指します。",
   },
   {
-    title: "MRワクチン支援",
+    title: "透明な運営体制づくり",
     description:
-      "小児期・思春期にMRワクチンを2回接種する機会を逃し、未接種・1回のみ・接種歴不明のまま成人した方を想定しています。",
+      "寄付金管理、個人情報保護、補助対象者の選定方法を整え、透明性のある形で開始します。",
   },
   {
-    title: "HPVワクチン支援",
+    title: "医療機関相談への接続",
     description:
-      "積極的勧奨差し控え、情報不足、家庭や経済的事情などにより、若年期にHPVワクチンの接種機会を逃した方を想定しています。",
+      "接種歴や希望内容を整理し、医療機関で接種可否や必要回数を相談しやすくする仕組みを整えます。",
   },
 ];
 
@@ -287,7 +287,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading label="First Step" title="最初に目指すこと">
             <p>
-              本基金では、まずMRワクチンとHPVワクチンの費用補助を、1〜3名の小規模な初期パイロットとして開始することを検討しています。小児期・若年期に本人の意思によらず接種機会を逃し、成人後に本人の意思で接種を希望する方のうち、医療機関で接種適応を確認したうえで、費用負担が障壁となっている方を支えることを目指します。
+              麻疹の国内報告が増加している状況を踏まえ、本基金では、まず成人MRワクチン・キャッチアップ支援から小規模に開始することを検討しています。小児期・思春期にMRワクチンを2回接種する機会を逃し、成人後に本人の意思で接種を希望する方のうち、医療機関で接種適応を確認したうえで、費用負担が障壁となっている方を支えることを目指します。
             </p>
           </SectionHeading>
           <div className="grid gap-5 md:grid-cols-3">
@@ -306,7 +306,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-6 rounded-lg border border-emerald-100 bg-white/85 p-5 text-sm leading-7 text-slate-600">
-            本プロジェクトは、定期接種対象児への接種機会を妨げないことを前提に進めます。団体が診療行為や個別の接種可否判断を行うわけではありません。接種の可否、接種するワクチンの種類、接種間隔、抗体検査の要否、妊娠の有無や禁忌の確認などについては、必ず医療機関で相談してください。
+            本プロジェクトは、定期接種対象児への接種機会を妨げないことを前提に進めます。団体が診療行為や個別の接種可否判断を行うわけではありません。接種の可否、接種するワクチンの種類、接種間隔、抗体検査の要否などについては、必ず医療機関で相談してください。
           </p>
         </div>
       </section>
@@ -315,7 +315,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <SectionHeading label="Future Support" title="将来的に目指す支援">
             <p>
-              費用補助だけでなく、接種を希望する方が医療機関で相談しやすくなるよう、接種歴・既往歴・希望するワクチンを整理した「キャッチアップ接種相談シート」の作成支援も検討しています。初期パイロットではMRワクチンとHPVワクチンから小さく始め、運営体制と安全な申請導線を整えたうえで、将来的には対象ワクチンや支援人数の拡大も検討します。
+              費用補助だけでなく、接種を希望する方が医療機関で相談しやすくなるよう、接種歴・既往歴・希望するワクチンを整理した「キャッチアップ接種相談シート」の作成支援も検討しています。MRワクチンでの小規模な運用を整えたうえで、将来的にはHPVワクチンなど他のワクチンへの支援拡大も検討します。
             </p>
           </SectionHeading>
           <div className="grid gap-5 md:grid-cols-3">
