@@ -3,7 +3,6 @@ import {
   CtaGroup,
   NoticeCard,
   PageShell,
-  xUrl,
 } from "./_components/site";
 
 export default function Home() {
@@ -17,7 +16,7 @@ export default function Home() {
               成人後の接種相談を支える準備プロジェクト
             </p>
             <h1 className="mt-8 text-4xl font-semibold tracking-normal text-slate-950 sm:text-6xl">
-              成人キャッチアップ・ワクチン基金
+              成人キャッチアップワクチン基金
             </h1>
             <p className="mt-4 text-lg font-medium text-slate-600 sm:text-2xl">
               Vaccine Second Chance Fund Japan
@@ -38,14 +37,6 @@ export default function Home() {
             </p>
             <div className="mt-10 space-y-5">
               <CtaGroup />
-              <a
-                href={xUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex text-base font-semibold text-teal-800 underline decoration-teal-300 underline-offset-4"
-              >
-                公式Xを見る
-              </a>
               <NoticeCard compact />
             </div>
           </div>

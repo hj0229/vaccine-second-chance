@@ -4,7 +4,7 @@ import { SiteFooter, SiteHeader } from "./_components/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "成人キャッチアップ・ワクチン基金",
+  title: "成人キャッチアップワクチン基金",
   description:
     "本人の意思によらず予防接種の機会を逃した人が、成人後に接種を検討できるよう支える準備プロジェクトです。",
 };

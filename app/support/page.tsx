@@ -23,18 +23,22 @@ export default function SupportPage() {
             {
               title: "医療者",
               text: "小児科、産婦人科、感染症、公衆衛生などの観点から助言いただける方。",
+              tasks: "相談フロー、注意書き、医療機関へ確認すべき事項のレビュー",
             },
             {
               title: "会計に詳しい方",
               text: "会計管理、収支報告、透明性のある運用について相談できる方。",
+              tasks: "補助金支払い記録、領収書管理、活動報告の確認",
             },
             {
               title: "法務・個人情報保護に詳しい方",
               text: "申請フォーム、同意文書、個人情報管理について確認いただける方。",
+              tasks: "フォーム文言、同意文、個人情報管理方法の確認",
             },
             {
               title: "Web・広報に協力できる方",
               text: "サイト改善、SNS、説明資料づくりに協力いただける方。",
+              tasks: "サイト改善、公式X、説明資料作成",
             },
           ].map((item) => (
             <div
@@ -46,6 +50,12 @@ export default function SupportPage() {
               </h2>
               <p className="mt-3 text-sm leading-7 text-slate-600">
                 {item.text}
+              </p>
+              <p className="mt-4 text-sm font-semibold text-slate-900">
+                想定タスク
+              </p>
+              <p className="mt-2 text-sm leading-7 text-slate-600">
+                {item.tasks}
               </p>
             </div>
           ))}

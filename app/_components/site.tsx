@@ -17,7 +17,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-20 border-b border-teal-100 bg-white/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <Link href="/" className="text-base font-semibold text-slate-950">
-          成人キャッチアップ・ワクチン基金
+          成人キャッチアップワクチン基金
         </Link>
         <nav aria-label="主要ナビゲーション" className="flex flex-wrap gap-2">
           {navItems.map((item) => (
@@ -46,7 +46,7 @@ export function SiteHeader() {
 export function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white px-6 py-8 text-center text-sm leading-7 text-slate-500">
-      <p>© 2026 成人キャッチアップ・ワクチン基金 / Vaccine Second Chance Fund Japan</p>
+      <p>© 2026 成人キャッチアップワクチン基金 / Vaccine Second Chance Fund Japan</p>
       <p className="mt-1">
         本プロジェクトは診療行為や接種可否判断を行いません。
       </p>
