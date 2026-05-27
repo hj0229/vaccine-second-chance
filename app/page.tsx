@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import {
   ContentSection,
   CtaGroup,
@@ -6,6 +8,8 @@ import {
 } from "./_components/site";
 
 export default function Home() {
+  const cardHrefs = ["/pilot", "/about", "/support"];
+
   return (
     <PageShell>
       <section className="relative overflow-hidden border-b border-teal-100 bg-gradient-to-b from-sky-50 via-white to-white">
@@ -58,10 +62,11 @@ export default function Home() {
               title: "協力者募集",
               text: "医療、会計、法務・個人情報保護、Web・広報の協力者を募集しています。",
             },
-          ].map((item) => (
-            <div
+          ].map((item, index) => (
+            <Link
               key={item.title}
-              className="rounded-lg border border-sky-100 bg-white p-6 shadow-sm"
+              href={cardHrefs[index]}
+              className="block rounded-lg border border-sky-100 bg-white p-6 shadow-sm transition duration-200 hover:-translate-y-1 hover:border-sky-300 hover:shadow-md focus-visible:-translate-y-1 focus-visible:border-sky-400 focus-visible:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-300 focus-visible:ring-offset-2"
             >
               <h2 className="text-lg font-semibold text-slate-900">
                 {item.title}
@@ -69,7 +74,7 @@ export default function Home() {
               <p className="mt-3 text-base leading-8 text-slate-700">
                 {item.text}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </ContentSection>
