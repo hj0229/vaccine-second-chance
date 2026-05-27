@@ -30,6 +30,16 @@ export default function PilotPage() {
             </p>
           </InfoCard>
         </div>
+        <div className="mt-6 rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm">
+          <p>
+            成人後にMR/HPVワクチンを検討する意味や、性交渉経験・既婚・長期パートナーがいる場合のHPVワクチンの考え方は、事前に整理できます。
+          </p>
+          <div className="mt-4">
+            <CtaLink href="/vaccines" variant="secondary">
+              ワクチンについて確認する
+            </CtaLink>
+          </div>
+        </div>
       </ContentSection>
 
       <ContentSection>
@@ -99,6 +109,9 @@ export default function PilotPage() {
             <div className="mt-6">
               <CtaLink href="/flow" variant="secondary">
                 接種までの流れを見る
+              </CtaLink>
+              <CtaLink href="/vaccines" variant="secondary">
+                MR/HPVについて見る
               </CtaLink>
             </div>
           </InfoCard>

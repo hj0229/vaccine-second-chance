@@ -94,6 +94,11 @@ export default function FlowPage() {
           <p>
             本プロジェクトは、相談内容の整理と補助に関する案内を行います。接種可否、必要回数、接種間隔、抗体検査の要否、副反応リスクなどの医学的判断は行いません。
           </p>
+          <div className="mt-4">
+            <CtaLink href="/vaccines" variant="secondary">
+              MR/HPVワクチンについて確認する
+            </CtaLink>
+          </div>
         </div>
       </ContentSection>
 
@@ -149,6 +154,9 @@ export default function FlowPage() {
               </CtaLink>
               <CtaLink href="/pilot" variant="secondary">
                 第0期パイロット詳細を見る
+              </CtaLink>
+              <CtaLink href="/vaccines" variant="secondary">
+                ワクチンについて見る
               </CtaLink>
               <CtaLink href="/privacy" variant="secondary">
                 個人情報の取り扱いを見る

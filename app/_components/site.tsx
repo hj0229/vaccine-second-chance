@@ -8,6 +8,7 @@ const navItems = [
   { label: "トップ", href: "/" },
   { label: "第0期パイロット", href: "/pilot" },
   { label: "接種までの流れ", href: "/flow" },
+  { label: "ワクチンについて", href: "/vaccines" },
   { label: "団体について", href: "/about" },
   { label: "協力・寄付", href: "/support" },
   { label: "個人情報", href: "/privacy" },
