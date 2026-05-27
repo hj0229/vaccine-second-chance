@@ -8,7 +8,7 @@ import {
 } from "./_components/site";
 
 export default function Home() {
-  const cardHrefs = ["/pilot", "/about", "/support"];
+  const cardHrefs = ["/pilot", "/flow", "/about", "/support"];
 
   return (
     <PageShell>
@@ -48,11 +48,15 @@ export default function Home() {
       </section>
 
       <ContentSection tone="sky">
-        <div className="grid gap-5 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
               title: "第0期パイロット",
               text: "MR/HPVワクチンから小規模に相談導線を検証します。",
+            },
+            {
+              title: "接種までの流れ",
+              text: "フォーム相談後に、医療機関での相談・接種、書類提出、補助までの流れを確認できます。",
             },
             {
               title: "団体について",

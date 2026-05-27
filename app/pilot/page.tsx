@@ -1,6 +1,7 @@
 import {
   BulletList,
   ContentSection,
+  CtaLink,
   CtaGroup,
   InfoCard,
   NoticeCard,
@@ -95,6 +96,11 @@ export default function PilotPage() {
                 "医療機関で接種可否を確認したうえで、対象条件や必要書類を踏まえて補助可否を判断します",
               ]}
             />
+            <div className="mt-6">
+              <CtaLink href="/flow" variant="secondary">
+                接種までの流れを見る
+              </CtaLink>
+            </div>
           </InfoCard>
           <InfoCard title="第0期パイロットへの関わり方">
             <p>
