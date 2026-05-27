@@ -1,4 +1,5 @@
 const formUrl = "https://forms.gle/1aEDxBHTyjaXoR4C8";
+const xUrl = "https://x.com/VSCF_Japan";
 const email = "info@vaccine-second-chance.org";
 
 const policies = [
@@ -228,6 +229,9 @@ function CtaGroup({ inverted = false }: { inverted?: boolean }) {
       </CtaLink>
       <CtaLink href={`mailto:${email}`} variant={inverted ? "light" : "secondary"}>
         問い合わせる
+      </CtaLink>
+      <CtaLink href={xUrl} external variant={inverted ? "light" : "secondary"}>
+        公式Xを見る
       </CtaLink>
     </div>
   );
@@ -596,7 +600,7 @@ export default function Home() {
             お問い合わせ
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-teal-50 sm:text-lg">
-            相談・支援対象候補としての関心登録、医療者・広報・会計などでの協力、その他のお問い合わせを受け付けています。
+            相談・支援対象候補としての関心登録、医療者・広報・会計などでの協力、その他のお問い合わせを受け付けています。活動状況や第0期パイロットの進捗は、公式Xでも発信しています。
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-5">
             <CtaGroup inverted />
