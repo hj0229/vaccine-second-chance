@@ -171,6 +171,31 @@ const references = [
   },
 ];
 
+function FaqAccordionItem({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
+  return (
+    <details className="group rounded-lg border border-sky-100 bg-white p-5 shadow-sm open:border-teal-200">
+      <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-base font-semibold leading-7 text-slate-900 sm:text-lg [&::-webkit-details-marker]:hidden">
+        <span>{title}</span>
+        <span
+          aria-hidden="true"
+          className="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-teal-100 text-lg leading-none text-teal-700 transition group-open:rotate-45 group-open:bg-teal-50"
+        >
+          +
+        </span>
+      </summary>
+      <div className="mt-4 border-t border-sky-100 pt-4">
+        <BulletList items={items} />
+      </div>
+    </details>
+  );
+}
+
 export default function VaccinesPage() {
   return (
     <PageShell>
@@ -211,9 +236,11 @@ export default function VaccinesPage() {
         </SectionHeading>
         <div className="grid gap-5">
           {faqItems.map((item) => (
-            <InfoCard key={item.title} title={item.title}>
-              <BulletList items={item.items} />
-            </InfoCard>
+            <FaqAccordionItem
+              key={item.title}
+              title={item.title}
+              items={item.items}
+            />
           ))}
         </div>
       </ContentSection>
