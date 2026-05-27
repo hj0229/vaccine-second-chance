@@ -6,12 +6,27 @@ import {
   SectionHeading,
 } from "../_components/site";
 
-const message = [
-  "これまで診療の中で、ワクチンで防げたかもしれない感染症によって重症化し、生活や将来の選択に大きな影響を受ける人を見てきました。",
-  "小児期の接種は本人が選べるものではありません。家庭の事情、情報へのアクセス、当時の社会状況によって、接種機会を逃すことがあります。",
-  "成人後に本人が接種を希望しても、情報の整理、相談先、費用の壁が重なり、一歩を踏み出しにくい現実があります。",
-  "成人キャッチアップワクチン基金は、誰かを責めるためではなく、今から選び直したい人の一歩を社会で支えるために立ち上げる準備プロジェクトです。",
-  "遅れても、今から守れる。その選択を支えられる仕組みを、少人数の検証から丁寧に育てていきます。",
+const messageIntro = [
+  "「予防接種は打ちません。なぜなら……」",
+  "小児科外来で、ときどきこのような言葉を聞きます。",
+  "小児科医として、私はできる限り丁寧に、ワクチンの必要性を説明します。それでも最終的に、「打たない」という判断になることも少なくありません。",
+  "親御さんが、子どものことを思い、調べ、悩み、考えて出した結論です。医療者として、接種を強制することはできません。",
+  "そして私たちは、親御さんの思いやその選択を責めたいわけではありません。",
+  "では、その子自身が大人になったときはどうでしょうか。",
+  "たとえば、",
+];
+
+const messageExamples = [
+  "留学したいと思ったときに、必要な予防接種を受けていない",
+  "医療職など、ワクチン接種が求められる職業に進みにくい",
+  "将来、自分や家族が、ワクチンで防げた病気のリスクに向き合うことになる",
+];
+
+const messageClosing = [
+  "子どもの頃に受けなかった予防接種が、大人になった本人の選択肢や可能性に影響することがあります。",
+  "そして成人になり、自分の意思で「今からワクチンを受けたい」と思ったとき、多くの場合、その接種は自費になります。",
+  "成人キャッチアップワクチン基金は、過去の判断を否定するためではなく、今から選び直したい人の一歩を、社会で支えるための準備プロジェクトです。",
+  "遅れても、今から守れる。打てなかった過去を責めるのではなく、これから守れる未来を、もう一度つくる。その選択を支えられる仕組みを、まずは少人数の検証から、丁寧に育てていきます。",
 ];
 
 export default function AboutPage() {
@@ -43,10 +58,22 @@ export default function AboutPage() {
         <SectionHeading label="Message" title="代表メッセージ" />
         <blockquote className="mx-auto max-w-4xl rounded-lg border border-teal-100 bg-white p-7 shadow-sm sm:p-10">
           <div className="space-y-6 text-base leading-9 text-slate-700 sm:text-lg">
-            {message.map((paragraph) => (
+            {messageIntro.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <p className="font-semibold text-slate-900">代表　田中寛顕 / 小児科医</p>
+            <ul className="space-y-3 pl-6">
+              {messageExamples.map((item) => (
+                <li key={item} className="list-disc">
+                  {item}
+                </li>
+              ))}
+            </ul>
+            {messageClosing.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p className="pt-2 text-sm font-medium text-slate-500 sm:text-base">
+              代表　田中寛顕 / 小児科医
+            </p>
           </div>
         </blockquote>
       </ContentSection>
