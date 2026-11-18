@@ -33,7 +33,7 @@ export default function Home() {
                 子どもの頃に接種の機会を逃した方や、接種歴が分からない方へ。医療機関で相談する前の情報整理と、費用の悩みに向き合います。
               </p>
               <p>
-                現在、第0期パイロットの事前相談体制を整えています。MRワクチンの接種費用支援を優先して検討し、HPVについても接種歴や費用のお悩みを伺います。接種するか迷っている段階でもご相談いただけます。
+                現在、第0期パイロットの事前相談を受け付けています。MRワクチンの接種費用支援を優先して検討し、HPVについても接種歴や費用のお悩みを伺います。接種するか迷っている段階でもご相談いただけます。
               </p>
             </div>
             <p className="mt-5 max-w-3xl rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm">
@@ -41,7 +41,7 @@ export default function Home() {
             </p>
             <div className="mt-10 space-y-5">
               <CtaGroup />
-              <p className="text-sm leading-7 text-slate-600">フォームの更新・確認が終わり次第、ご案内します。相談だけでは補助は決まりません。</p>
+              <p className="text-sm leading-7 text-slate-600">リンク先はGoogleフォームです。送信だけでは補助は決まりません。</p>
               <NoticeCard compact />
             </div>
           </div>

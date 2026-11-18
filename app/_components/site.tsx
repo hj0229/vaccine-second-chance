@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export const formUrl = "https://forms.gle/1aEDxBHTyjaXoR4C8";
 // Re-enable only after all four form branches, consent and submission are verified.
-export const consultationFormReady = false;
+export const consultationFormReady = true;
 export const xUrl = "https://x.com/VSCF_Japan";
 export const email = "info@vaccine-second-chance.org";
 
@@ -222,5 +222,5 @@ export function BulletList({ items }: { items: string[] }) {
 
 
 export function SupportStatus() {
-  return <aside aria-label="現在の支援方針" className="border-b border-teal-100 bg-teal-50 px-6 py-5"><div className="mx-auto max-w-6xl"><p className="mb-3 text-sm font-semibold">第0期準備中：相談フォームは更新・確認中</p><div className="grid gap-3 sm:grid-cols-2"><div className="rounded-lg border border-teal-200 bg-white p-4"><h2 className="font-semibold text-teal-900">MR｜費用補助の優先検討対象</h2><p className="mt-2 text-sm leading-7">資金・選考基準・支払い方法などを準備中です。相談の送信だけでは補助は決まりません。</p></div><div className="rounded-lg border border-sky-200 bg-white p-4"><h2 className="font-semibold text-slate-900">HPV｜相談・ニーズ調査</h2><p className="mt-2 text-sm leading-7">一般情報や公的制度・相談先をご案内します。第0期の費用補助は現時点で予定・確約していません。将来の支援拡大はMRの結果を踏まえて検討します。</p></div></div></div></aside>;
+  return <aside aria-label="現在の支援方針" className="border-b border-teal-100 bg-teal-50 px-6 py-5"><div className="mx-auto max-w-6xl"><p className="mb-3 text-sm font-semibold">第0期準備中：事前相談・ニーズ調査を受付中</p><div className="grid gap-3 sm:grid-cols-2"><div className="rounded-lg border border-teal-200 bg-white p-4"><h2 className="font-semibold text-teal-900">MR｜費用補助の優先検討対象</h2><p className="mt-2 text-sm leading-7">資金・選考基準・支払い方法などを準備中です。相談の送信だけでは補助は決まりません。</p></div><div className="rounded-lg border border-sky-200 bg-white p-4"><h2 className="font-semibold text-slate-900">HPV｜相談・ニーズ調査</h2><p className="mt-2 text-sm leading-7">一般情報や公的制度・相談先をご案内します。第0期の費用補助は現時点で予定・確約していません。将来の支援拡大はMRの結果を踏まえて検討します。</p></div></div></div></aside>;
 }

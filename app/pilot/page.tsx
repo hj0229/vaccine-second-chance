@@ -26,7 +26,7 @@ export default function PilotPage() {
         </SectionHeading>
         <div className="mx-auto max-w-3xl space-y-5">
           <CtaGroup includePilot={false} />
-          <p className="text-sm leading-7 text-slate-600">現在は第0期の事前相談・ニーズ調査の準備中です。Googleフォームは更新・動作確認中です。MRの補助はまだ確定していません。HPVは相談・ニーズ調査を受け付けています。</p>
+          <p className="text-sm leading-7 text-slate-600">現在は第0期の事前相談・ニーズ調査を受け付けています。リンク先はGoogleフォームです。MRの補助はまだ確定していません。HPVは相談・ニーズ調査を受け付けています。</p>
           <div className="rounded-lg border border-teal-200 bg-white p-5 text-base leading-8 text-slate-800">
             <p className="font-semibold">補助を希望する方は、予約・支払いの前にご相談ください。</p>
             <p className="mt-2">運営から対象費用・回数・上限額の案内を受け、自己負担の見込みを確認してから進めます。フォーム送信だけでは、採択や費用補助は決まりません。</p>
@@ -75,7 +75,7 @@ export default function PilotPage() {
         <div className="mx-auto max-w-3xl space-y-6">
           <h2 className="text-2xl font-semibold">まずは、今の状況をお聞かせください。</h2>
           <CtaGroup includePilot={false} />
-          <p className="text-sm leading-7 text-slate-600">フォーム再開後は、事前相談・ニーズ調査を兼ねて受け付けます。送信後は、入力したメールアドレスへの連絡をお待ちください。返信が届かない場合は迷惑メールフォルダをご確認のうえ、<a className="break-all underline underline-offset-4" href={`mailto:${email}`}>{email}</a>へお問い合わせください。</p>
+          <p className="text-sm leading-7 text-slate-600">フォームは事前相談・ニーズ調査を兼ねています。送信後は、入力したメールアドレスへの連絡をお待ちください。返信が届かない場合は迷惑メールフォルダをご確認のうえ、<a className="break-all underline underline-offset-4" href={`mailto:${email}`}>{email}</a>へお問い合わせください。</p>
           <NoticeCard compact />
           <p className="text-sm leading-7 text-slate-600">運営への協力をご希望の方は、<a href="/support" className="underline underline-offset-4">協力者募集ページ</a>をご覧ください。</p>
         </div>
