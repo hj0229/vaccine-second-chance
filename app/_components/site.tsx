@@ -18,11 +18,11 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-teal-100 bg-white/95 backdrop-blur">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-30 focus:bg-white focus:p-4 focus:text-teal-800">本文へ移動</a>
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:px-8 lg:px-10 xl:flex-row xl:items-center xl:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-4 sm:px-8 lg:px-10">
         <Link href="/" className="shrink-0 text-base font-semibold text-slate-950">
           成人キャッチアップワクチン基金
         </Link>
-        <nav aria-label="主要ナビゲーション" className="flex flex-wrap gap-1">
+        <nav aria-label="主要ナビゲーション" className="hidden flex-wrap gap-1 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -32,15 +32,13 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={xUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full px-3 py-2 text-sm font-semibold text-teal-800 transition hover:bg-teal-50"
-          >
-            公式X
-          </a>
         </nav>
+        <details className="md:hidden">
+          <summary className="flex min-h-11 cursor-pointer items-center rounded-lg px-3 text-sm font-semibold text-teal-800">メニュー</summary>
+          <nav aria-label="モバイルナビゲーション" className="absolute inset-x-0 top-full grid gap-1 border-b border-teal-100 bg-white p-4 shadow-sm">
+            {navItems.map((item) => <a key={item.href} href={item.href} className="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-teal-50">{item.label}</a>)}
+          </nav>
+        </details>
       </div>
     </header>
   );
@@ -53,13 +51,14 @@ export function SiteFooter() {
       <p>設立準備プロジェクト　代表：田中寛顕</p>
       <p className="mt-1">接種に関する医学的判断は医療機関で行います。</p>
       <a href={`mailto:${email}`} className="underline underline-offset-4">{email}</a>
+      <p><a href={xUrl} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4">公式X</a></p>
     </footer>
   );
 }
 
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
-    <main id="main-content" className="min-h-screen bg-white text-slate-900">
+    <main id="main-content" tabIndex={-1} className="min-h-screen bg-white text-slate-900">
       {children}
     </main>
   );
@@ -85,7 +84,7 @@ export function SectionHeading({
       <p className="text-sm font-semibold tracking-[0.18em] text-teal-700 uppercase">
         {label}
       </p>
-      <Heading className="mt-3 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+      <Heading className="mt-3 text-balance text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
         {title}
       </Heading>
       {children ? (
