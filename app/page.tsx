@@ -5,13 +5,14 @@ import {
   CtaGroup,
   NoticeCard,
   PageShell,
+  SupportStatus,
 } from "./_components/site";
 
 export default function Home() {
   const cardHrefs = ["/pilot", "/flow", "/about", "/support"];
 
   return (
-    <PageShell>
+    <PageShell showStatus={false}>
       <section className="relative overflow-hidden border-b border-teal-100 bg-gradient-to-b from-sky-50 via-white to-white">
         <div className="absolute inset-x-0 top-0 h-2 bg-gradient-to-r from-sky-300 via-teal-300 to-emerald-300" />
         <div className="mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col justify-center px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
@@ -22,6 +23,10 @@ export default function Home() {
             <h1 className="mt-8 text-4xl font-semibold tracking-normal text-slate-950 sm:text-6xl">
               受けられなかったワクチンを、今、自分の意思で。
             </h1>
+            <div className="mt-6 space-y-3">
+              <CtaGroup />
+              <p className="text-sm leading-7 text-slate-600">成人の接種歴・費用の事前相談です。MRの費用支援は検討中、HPVは相談・ニーズ調査です。送信だけでは補助は決まりません。</p>
+            </div>
             <p className="mt-4 text-lg font-medium text-slate-600 sm:text-2xl">
               成人キャッチアップワクチン基金 / Vaccine Second Chance Fund Japan
             </p>
@@ -39,14 +44,11 @@ export default function Home() {
             <p className="mt-5 max-w-3xl rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm">
               MRの費用補助を優先的に検討しています。HPVは相談・ニーズ調査のみで、第0期の費用補助は予定・確約していません。補助を希望する方は予約・支払い前にご相談いただき、接種前に対象費用・回数・上限額をご確認ください。
             </p>
-            <div className="mt-10 space-y-5">
-              <CtaGroup />
-              <p className="text-sm leading-7 text-slate-600">リンク先はGoogleフォームです。送信だけでは補助は決まりません。</p>
-              <NoticeCard compact />
-            </div>
+            <div className="mt-6"><NoticeCard compact /></div>
           </div>
         </div>
       </section>
+      <SupportStatus />
 
       <ContentSection tone="sky">
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">

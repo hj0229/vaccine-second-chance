@@ -58,10 +58,10 @@ export function SiteFooter() {
   );
 }
 
-export function PageShell({ children }: { children: React.ReactNode }) {
+export function PageShell({ children, showStatus = true }: { children: React.ReactNode; showStatus?: boolean }) {
   return (
     <main id="main-content" tabIndex={-1} className="min-h-screen bg-white text-slate-900">
-      <SupportStatus />
+      {showStatus ? <SupportStatus /> : null}
       {children}
     </main>
   );
