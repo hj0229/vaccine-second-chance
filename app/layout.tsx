@@ -7,10 +7,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://vaccine-second-chance.org"),
   title: "成人キャッチアップワクチン基金",
   description:
-    "子どもの頃に予防接種の機会を逃した方の、今の選択を支える準備プロジェクト。成人のMR・HPVワクチンに関する事前相談と費用補助の仕組みづくりを進めています。",
+    "子どもの頃に予防接種の機会を逃した方の、今の選択を支える準備プロジェクト。成人のMR費用支援の優先検討と、HPVの相談・ニーズ調査を進めています。",
   openGraph: {
     title: "受けられなかったワクチンを、今、自分の意思で。",
-    description: "成人のMR・HPVワクチンに関する事前相談と費用の悩みを伺います。まず5名程度から始める準備プロジェクトです。",
+    description: "MRの費用支援を優先検討し、HPVは相談・ニーズ調査を受け付けています。少人数から始める準備プロジェクトです。",
     siteName: "成人キャッチアップワクチン基金",
     locale: "ja_JP",
     type: "website",

@@ -14,7 +14,7 @@ export default function SupportPage() {
       <ContentSection tone="sky">
         <SectionHeading label="Support" title="協力者募集・寄付について">
           <p>
-            第0期パイロットを小規模に進めながら、医療、会計、法務・個人情報保護、Web・広報の観点から協力できる方を募集しています。
+            第0期パイロットの小規模な実施に向けて、医療、会計、法務・個人情報保護、Web・広報の観点から協力できる方を募集しています。
           </p>
         </SectionHeading>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -71,9 +71,9 @@ export default function SupportPage() {
           <InfoCard title="第0期で検討している補助">
             <BulletList
               items={[
-                "第0期では、まず5名程度を目安に事前相談・ニーズ調査を受け付け、費用補助を個別に検討します",
+                "第0期では、少人数で事前相談・ニーズ調査を受け付け、MRの費用補助を優先的に検討します。HPVは相談・ニーズ調査のみです",
                 "すべての相談者に補助を約束するものではありません",
-                "補助を行う場合は、接種前に対象費用・回数・上限額を案内し、接種後に領収書・接種記録を確認します",
+                "MRの補助を行う場合は、接種前に対象費用・回数・上限額を案内し、接種後に領収書・接種記録を確認します",
               ]}
             />
           </InfoCard>
