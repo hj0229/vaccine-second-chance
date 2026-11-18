@@ -3,7 +3,6 @@ import {
   ContentSection,
   CtaLink,
   email,
-  formUrl,
   InfoCard,
   PageShell,
   SectionHeading,
@@ -64,7 +63,7 @@ export default function SupportPage() {
 
       <ContentSection>
         <div className="grid gap-5 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          <SectionHeading label="Donation" title="寄付について" align="left">
+          <SectionHeading as="h2" label="Donation" title="寄付について" align="left">
             <p>
               寄付受付は現在準備中です。受付方法や報告方法が整い次第、公式Xと本サイトでお知らせします。
             </p>
@@ -72,9 +71,9 @@ export default function SupportPage() {
           <InfoCard title="第0期で検討している補助">
             <BulletList
               items={[
-                "第0期では少人数を対象に、所定の上限内で原則として接種費用を全額補助する予定です",
+                "第0期では、まず5名程度を目安に事前相談・ニーズ調査を受け付け、費用補助を個別に検討します",
                 "すべての相談者に補助を約束するものではありません",
-                "対象条件、医療機関での接種可否確認、領収書・接種記録の確認を踏まえて個別に判断します",
+                "補助を行う場合は、接種前に対象費用・回数・上限額を案内し、接種後に領収書・接種記録を確認します",
               ]}
             />
           </InfoCard>
@@ -87,11 +86,11 @@ export default function SupportPage() {
             協力を希望する方へ
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700">
-            相談者としての応募、専門的な協力、一般的な問い合わせはいずれも受け付けています。フォームまたはメールからご連絡ください。
+            専門的な協力や一般的なお問い合わせは、メールでご連絡ください。接種・費用についての相談は、事前相談ページから受け付けています。
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-            <CtaLink href={formUrl} external>
-              Googleフォームで連絡する
+            <CtaLink href="/pilot">
+              接種・費用の事前相談へ
             </CtaLink>
             <CtaLink href={`mailto:${email}`} variant="secondary">
               メールで問い合わせる
@@ -102,3 +101,4 @@ export default function SupportPage() {
     </PageShell>
   );
 }
+

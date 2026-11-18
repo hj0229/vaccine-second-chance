@@ -6,7 +6,7 @@ export const email = "info@vaccine-second-chance.org";
 
 const navItems = [
   { label: "トップ", href: "/" },
-  { label: "第0期パイロット", href: "/pilot" },
+  { label: "接種・費用の相談", href: "/pilot" },
   { label: "接種までの流れ", href: "/flow" },
   { label: "ワクチンについて", href: "/vaccines" },
   { label: "団体について", href: "/about" },
@@ -17,11 +17,12 @@ const navItems = [
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-20 border-b border-teal-100 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
-        <Link href="/" className="text-base font-semibold text-slate-950">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:z-30 focus:bg-white focus:p-4 focus:text-teal-800">本文へ移動</a>
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-4 sm:px-8 lg:px-10 xl:flex-row xl:items-center xl:justify-between">
+        <Link href="/" className="shrink-0 text-base font-semibold text-slate-950">
           成人キャッチアップワクチン基金
         </Link>
-        <nav aria-label="主要ナビゲーション" className="flex flex-wrap gap-2">
+        <nav aria-label="主要ナビゲーション" className="flex flex-wrap gap-1">
           {navItems.map((item) => (
             <Link
               key={item.href}
@@ -49,16 +50,16 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-slate-200 bg-white px-6 py-8 text-center text-sm leading-7 text-slate-500">
       <p>© 2026 成人キャッチアップワクチン基金 / Vaccine Second Chance Fund Japan</p>
-      <p className="mt-1">
-        本プロジェクトは診療行為や接種可否判断を行いません。
-      </p>
+      <p>設立準備プロジェクト　代表：田中寛顕</p>
+      <p className="mt-1">接種に関する医学的判断は医療機関で行います。</p>
+      <a href={`mailto:${email}`} className="underline underline-offset-4">{email}</a>
     </footer>
   );
 }
 
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main id="main-content" className="min-h-screen bg-white text-slate-900">
       {children}
     </main>
   );
@@ -69,11 +70,13 @@ export function SectionHeading({
   title,
   children,
   align = "center",
+  as: Heading = "h1",
 }: {
   label: string;
   title: string;
   children?: React.ReactNode;
   align?: "center" | "left";
+  as?: "h1" | "h2";
 }) {
   const alignment = align === "center" ? "text-center mx-auto" : "";
 
@@ -82,9 +85,9 @@ export function SectionHeading({
       <p className="text-sm font-semibold tracking-[0.18em] text-teal-700 uppercase">
         {label}
       </p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
+      <Heading className="mt-3 text-3xl font-semibold tracking-normal text-slate-950 sm:text-4xl">
         {title}
-      </h1>
+      </Heading>
       {children ? (
         <div className="mt-5 text-base leading-8 text-slate-600 sm:text-lg">
           {children}
@@ -135,16 +138,13 @@ export function CtaGroup({ includePilot = true }: { includePilot?: boolean }) {
   return (
     <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
       <CtaLink href={formUrl} external>
-        MR/HPVワクチン接種を相談する
+        接種・費用について事前相談する
       </CtaLink>
       {includePilot ? (
         <CtaLink href="/pilot" variant="secondary">
-          第0期パイロットの詳細を見る
+          対象・補助方針を見る
         </CtaLink>
       ) : null}
-      <CtaLink href={xUrl} external variant="secondary">
-        公式Xを見る
-      </CtaLink>
     </div>
   );
 }
@@ -153,11 +153,11 @@ export function NoticeCard({ compact = false }: { compact?: boolean }) {
   return (
     <div className="rounded-lg border border-teal-100 bg-white/80 p-5 text-sm leading-7 text-slate-600 shadow-sm">
       <p>
-        本プロジェクトは診療行為や接種可否判断を行いません。実際の接種可否、必要回数、接種間隔、体調や既往歴に関する判断は、必ず医療機関で相談してください。
+        接種するかどうかは、ご本人と医療機関で相談して決めます。本プロジェクトは、情報整理と費用補助に関する案内を行います。
       </p>
       {!compact ? (
         <p className="mt-2">
-          第0期の補助は、対象条件、所定の上限、医療機関での接種可否確認、領収書・接種記録の確認を踏まえて個別に判断します。
+          フォーム送信だけでは補助は決まりません。補助を希望する方は、予約・支払いの前に、対象費用・回数・上限額について運営からの案内を確認してください。
         </p>
       ) : null}
     </div>
@@ -213,3 +213,4 @@ export function BulletList({ items }: { items: string[] }) {
     </ul>
   );
 }
+

@@ -17,30 +17,31 @@ export default function Home() {
         <div className="mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col justify-center px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-4xl">
             <p className="inline-flex rounded-full border border-teal-200 bg-white/80 px-4 py-2 text-sm font-medium text-teal-800 shadow-sm">
-              成人後の接種相談を支える準備プロジェクト
+              MR・HPVの接種と費用の事前相談を受付中
             </p>
             <h1 className="mt-8 text-4xl font-semibold tracking-normal text-slate-950 sm:text-6xl">
-              成人キャッチアップワクチン基金
+              受けられなかったワクチンを、今、自分の意思で。
             </h1>
             <p className="mt-4 text-lg font-medium text-slate-600 sm:text-2xl">
-              Vaccine Second Chance Fund Japan
+              成人キャッチアップワクチン基金 / Vaccine Second Chance Fund Japan
             </p>
             <p className="mt-8 text-3xl font-semibold text-teal-800 sm:text-5xl">
-              遅れても、今から守れる。
+              過去を責めず、これからの選択を支える。
             </p>
             <div className="mt-8 max-w-3xl space-y-5 text-lg leading-9 text-slate-700 sm:text-xl">
               <p>
-                本人の意思によらず予防接種の機会を逃した人が、成人後に自分の意思で接種を検討できるよう、情報整理、相談先への接続、費用補助の仕組みづくりを進めています。
+                子どもの頃に接種の機会を逃した方や、接種歴が分からない方へ。医療機関で相談する前の情報整理と、費用の悩みに向き合います。
               </p>
               <p>
-                現在、第0期 MR/HPVワクチン接種相談パイロットを実施中です。第0期では、まず5名程度を目安に、所定の上限内で原則として接種費用を全額補助する予定です。
+                現在は、まず5名程度を目安とする第0期の事前相談・ニーズ調査です。接種するか迷っている段階でもご相談いただけます。
               </p>
             </div>
             <p className="mt-5 max-w-3xl rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm">
-              ただし、すべての相談者に補助を約束するものではありません。対象条件、医療機関での接種可否確認、必要書類の確認などを踏まえて個別に判断します。
+              費用補助は個別に検討します。補助を希望する方は予約・支払い前にご相談いただき、接種前に対象費用・回数・上限額をご確認ください。
             </p>
             <div className="mt-10 space-y-5">
               <CtaGroup />
+              <p className="text-sm leading-7 text-slate-600">リンク先はGoogleフォームです。送信だけでは補助は決まりません。</p>
               <NoticeCard compact />
             </div>
           </div>
@@ -51,8 +52,8 @@ export default function Home() {
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {[
             {
-              title: "第0期パイロット",
-              text: "MR/HPVワクチンから小規模に相談導線を検証します。",
+              title: "接種・費用の事前相談",
+              text: "相談できる方と、現在の補助方針を確認できます。",
             },
             {
               title: "接種までの流れ",
@@ -85,3 +86,4 @@ export default function Home() {
     </PageShell>
   );
 }
+

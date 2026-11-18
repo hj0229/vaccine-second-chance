@@ -4,9 +4,17 @@ import { SiteFooter, SiteHeader } from "./_components/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://vaccine-second-chance.org"),
   title: "成人キャッチアップワクチン基金",
   description:
-    "本人の意思によらず予防接種の機会を逃した人が、成人後に接種を検討できるよう支える準備プロジェクトです。",
+    "子どもの頃に予防接種の機会を逃した方の、今の選択を支える準備プロジェクト。成人のMR・HPVワクチンに関する事前相談と費用補助の仕組みづくりを進めています。",
+  openGraph: {
+    title: "受けられなかったワクチンを、今、自分の意思で。",
+    description: "成人のMR・HPVワクチンに関する事前相談と費用の悩みを伺います。まず5名程度から始める準備プロジェクトです。",
+    siteName: "成人キャッチアップワクチン基金",
+    locale: "ja_JP",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -25,3 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
+

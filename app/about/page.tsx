@@ -4,6 +4,8 @@ import {
   InfoCard,
   PageShell,
   SectionHeading,
+  CtaGroup,
+  email,
 } from "../_components/site";
 
 const messageIntro = [
@@ -55,7 +57,7 @@ export default function AboutPage() {
       </ContentSection>
 
       <ContentSection tone="slate">
-        <SectionHeading label="Message" title="代表メッセージ" />
+        <SectionHeading as="h2" label="Message" title="代表メッセージ" />
         <blockquote className="mx-auto max-w-4xl rounded-lg border border-teal-100 bg-white p-7 shadow-sm sm:p-10">
           <div className="space-y-6 text-base leading-9 text-slate-700 sm:text-lg">
             {messageIntro.map((paragraph) => (
@@ -97,7 +99,7 @@ export default function AboutPage() {
               items={[
                 "接種機会を逃したまま成人すると、本人の意思だけでは情報や費用の壁を越えにくいことがあります",
                 "感染症による健康上の影響は、進学、就職、医療・福祉・教育などの将来選択にも関わる場合があります",
-                "ワクチン接種は、接種した本人を守るだけでなく、周囲に感染を広げにくくすることで、ワクチンを受けられない人や免疫が十分につきにくい人を守ることにもつながります。本人のための接種が、結果として家族や周囲の人を守る一歩にもなります",
+                "接種で得られる利益や注意点は、ワクチンの種類と本人の接種歴・状況によって異なります。根拠を確認し、医療機関で相談できるよう支えます",
                 "本人が今から接種を検討したいと思ったときに、相談できる導線が必要です",
               ]}
             />
@@ -112,7 +114,18 @@ export default function AboutPage() {
             />
           </InfoCard>
         </div>
+        <p className="mt-5 text-sm leading-7 text-slate-600">MR・HPVの効果と注意点、参考資料は、<a href="/vaccines" className="underline underline-offset-4">ワクチンについて</a>にまとめています。</p>
+      </ContentSection>
+      <ContentSection tone="slate">
+        <InfoCard title="運営について">
+          <p>運営：成人キャッチアップワクチン基金 / Vaccine Second Chance Fund Japan 設立準備プロジェクト</p>
+          <p>代表：田中寛顕（小児科専門医）</p>
+          <p>現在は少人数の事前相談を通じて、支援の仕組みを整える準備段階です。寄付受付は準備中です。</p>
+          <p>お問い合わせ：<a className="break-all underline underline-offset-4" href={`mailto:${email}`}>{email}</a></p>
+        </InfoCard>
+        <div className="mt-6"><CtaGroup /></div>
       </ContentSection>
     </PageShell>
   );
 }
+

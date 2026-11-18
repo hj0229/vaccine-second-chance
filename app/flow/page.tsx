@@ -1,173 +1,26 @@
 import type { Metadata } from "next";
+import { ContentSection, CtaGroup, NoticeCard, PageShell, SectionHeading, BulletList } from "../_components/site";
 
-import {
-  BulletList,
-  ContentSection,
-  CtaLink,
-  formUrl,
-  InfoCard,
-  NoticeCard,
-  PageShell,
-  SectionHeading,
-} from "../_components/site";
-
-export const metadata: Metadata = {
-  title: "接種までの流れ | 成人キャッチアップワクチン基金",
-  description:
-    "第0期パイロットで、フォーム相談後に医療機関での相談・接種、書類提出、補助実施までに進む流れを説明します。",
-};
+export const metadata: Metadata = { title: "事前相談から接種・補助までの流れ | 成人キャッチアップワクチン基金" };
 
 const steps = [
-  {
-    step: "STEP 1",
-    title: "フォームから相談",
-    icon: "📝",
-    items: [
-      "相談したいワクチン、接種歴、困りごと、費用面の不安などをフォームから送信します。",
-    ],
-  },
-  {
-    step: "STEP 2",
-    title: "運営側で内容確認",
-    icon: "🔎",
-    items: [
-      "運営側で、相談内容、対象ワクチン、接種歴、補助希望、連絡先を確認します。",
-      "内容を確認したうえで、補助対象候補となるか、医療機関で相談していただきたい内容、接種後に必要となる書類についてご案内します。",
-      "必要に応じてメールで追加確認を行います。",
-      "なお、本プロジェクトは接種可否の医学的判断を行うものではありません。実際に接種できるかどうかは、医療機関でご相談ください。",
-    ],
-  },
-  {
-    step: "STEP 3",
-    title: "医療機関で相談・接種",
-    icon: "🏥",
-    items: [
-      "接種可否、必要回数、接種間隔、抗体検査の要否、副反応リスクなどを医療機関で相談します。",
-      "医師の判断により、同日に接種できる場合もあります。",
-      "必要に応じて、検査や別日の接種となることもあります。",
-      "本プロジェクトは診療行為や接種可否判断を行いません。",
-    ],
-  },
-  {
-    step: "STEP 4",
-    title: "領収書・接種記録の提出",
-    icon: "📄",
-    items: [
-      "接種後、領収書と接種記録を提出していただきます。",
-      "接種時には、領収書と接種記録を必ず受け取ってください。",
-      "必要書類が確認できない場合、補助できないことがあります。",
-    ],
-  },
-  {
-    step: "STEP 5",
-    title: "補助実施・活動報告",
-    icon: "✅",
-    items: [
-      "書類確認後、所定の上限内で原則として接種費用を補助します。",
-      "補助は、対象条件、予算上限、医療機関での接種可否確認、領収書・接種記録の確認を踏まえて個別に判断します。",
-      "すべての相談者への補助をお約束するものではありません。",
-      "個人が特定されない形で、活動報告に使用することがあります。",
-    ],
-  },
-];
-
-const notes = [
-  "本プロジェクトは診療行為ではありません。",
-  "接種可否、必要回数、接種間隔、抗体検査の要否、副反応リスクなどは、必ず医療機関で相談してください。",
-  "医療機関での相談と接種は同日になる場合もありますが、医師の判断により別日になることもあります。",
-  "本プロジェクトが「接種可」と判断するものではありません。",
-  "補助は、対象条件、予算上限、医療機関での接種可否確認、領収書・接種記録の確認を踏まえて個別に判断します。",
+  { title: "事前相談・ニーズ調査に回答", items: ["Googleフォームから、相談したいワクチン、分かる範囲の接種歴、費用の悩みなどを送信してください。", "送信だけでは補助の採択や金額は確定しません。接種するか迷っている段階でも相談できます。"] },
+  { title: "運営からの連絡・条件確認", items: ["運営が内容を確認し、必要に応じてメールで追加確認を行います。", "医療機関で確認していただきたいことと、補助対象候補となるかを案内します。", "補助を希望する場合は、医療機関への予約・支払い前に運営へ確認してください。"] },
+  { title: "医療機関で相談し、補助条件を確認", items: ["医療機関で、接種可否、必要回数、接種間隔、抗体検査の要否、費用を確認します。相談・検査自体に費用がかかる場合があるため、受診前に医療機関へ確認してください。", "接種前に、運営から補助対象費用・回数・上限額、必要書類、立替の要否、支払い方法・時期の案内を受けてください。", "案内を受け取るまでは補助を見込んで接種・支払いを進めないでください。条件に納得できなければ、接種や申請を見送れます。"] },
+  { title: "医療機関で接種・書類を受け取る", items: ["医師の判断とご本人の同意に基づいて接種します。接種日や回数は医療機関で相談してください。", "領収書と、ワクチン名・接種日などが分かる接種記録を受け取り、保管してください。", "予定するワクチン、回数、費用などが事前案内から変わる場合は、接種前に運営へ再確認してください。"] },
+  { title: "書類確認・補助", items: ["運営の案内に従って、領収書と接種記録を提出します。", "事前に案内した条件と書類を確認して補助を行います。条件に合わない費用や、確認できない費用は補助できないことがあります。", "活動の経過は、個人が特定されない形で整理・報告することがあります。"] },
 ];
 
 export default function FlowPage() {
-  return (
-    <PageShell>
-      <ContentSection tone="sky">
-        <SectionHeading label="Flow" title="接種までの流れ">
-          <p>
-            フォーム送信後に、何を準備し、どこで相談し、どの書類が必要になるかを5つのステップで整理しています。
-            医療機関での相談と接種は同日になる場合もありますが、実際に接種できるかどうかは医療機関でご相談ください。
-          </p>
-        </SectionHeading>
-
-        <div className="rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm">
-          <p>
-            本プロジェクトは、相談内容の整理と補助に関する案内を行います。接種可否、必要回数、接種間隔、抗体検査の要否、副反応リスクなどの医学的判断は行いません。
-          </p>
-          <div className="mt-4">
-            <CtaLink href="/vaccines" variant="secondary">
-              MR/HPVワクチンについて確認する
-            </CtaLink>
-          </div>
-        </div>
-      </ContentSection>
-
-      <ContentSection>
-        <div className="relative mx-auto max-w-4xl">
-          <div className="absolute bottom-8 left-8 top-8 hidden w-px bg-teal-100 sm:block" />
-          <div className="space-y-5">
-            {steps.map((item, index) => (
-              <article key={item.step} className="relative">
-                <div className="grid gap-4 sm:grid-cols-[4rem_1fr]">
-                  <div className="relative z-10 flex items-start justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-teal-100 bg-teal-50 text-3xl shadow-sm">
-                      <span aria-hidden="true">{item.icon}</span>
-                    </div>
-                  </div>
-                  <div className="rounded-lg border border-sky-100 bg-white p-6 shadow-sm">
-                    <p className="text-sm font-semibold tracking-[0.16em] text-teal-700">
-                      {item.step}
-                    </p>
-                    <h2 className="mt-2 text-xl font-semibold text-slate-950">
-                      {item.title}
-                    </h2>
-                    <div className="mt-4">
-                      <BulletList items={item.items} />
-                    </div>
-                  </div>
-                </div>
-                {index < steps.length - 1 ? (
-                  <div className="flex h-10 items-center justify-center sm:hidden">
-                    <span className="text-2xl text-teal-500" aria-hidden="true">
-                      ↓
-                    </span>
-                  </div>
-                ) : null}
-              </article>
-            ))}
-          </div>
-        </div>
-      </ContentSection>
-
-      <ContentSection tone="slate">
-        <div className="grid gap-5 lg:grid-cols-[1fr_0.9fr]">
-          <InfoCard title="必ず確認していただきたいこと">
-            <BulletList items={notes} />
-          </InfoCard>
-          <InfoCard title="次に進む">
-            <p>
-              相談を始める場合はフォームへ進んでください。第0期パイロットの対象や補助方針、個人情報の取り扱いも事前に確認できます。
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <CtaLink href={formUrl} external>
-                MR/HPVワクチン接種を相談する
-              </CtaLink>
-              <CtaLink href="/pilot" variant="secondary">
-                第0期パイロット詳細を見る
-              </CtaLink>
-              <CtaLink href="/vaccines" variant="secondary">
-                ワクチンについて見る
-              </CtaLink>
-              <CtaLink href="/privacy" variant="secondary">
-                個人情報の取り扱いを見る
-              </CtaLink>
-            </div>
-          </InfoCard>
-        </div>
-        <div className="mt-6">
-          <NoticeCard />
-        </div>
-      </ContentSection>
-    </PageShell>
-  );
+  return <PageShell>
+    <ContentSection tone="sky">
+      <SectionHeading label="相談後の流れ" title="費用の見通しを確認してから、接種へ。"><p>事前相談から医療機関での確認、接種、補助までの流れです。現在は、少人数で支援の仕組みを整える第0期です。</p></SectionHeading>
+      <div className="mx-auto max-w-3xl rounded-lg border border-teal-200 bg-white p-5 text-base leading-8"><strong>補助を希望する方へ</strong><p>予約・支払いの前に運営へ相談し、接種前に補助対象費用・回数・上限額を確認してください。フォーム送信だけでは補助は決まりません。</p></div>
+    </ContentSection>
+    <ContentSection>
+      <ol className="mx-auto max-w-3xl space-y-6">{steps.map((step, index) => <li key={step.title} className="rounded-lg border border-sky-100 bg-white p-6 shadow-sm sm:p-8"><p className="text-sm font-semibold tracking-wider text-teal-700">STEP {index + 1}</p><h2 className="mt-2 text-xl font-semibold">{step.title}</h2><div className="mt-4"><BulletList items={step.items} /></div></li>)}</ol>
+    </ContentSection>
+    <ContentSection tone="slate"><div className="mx-auto max-w-3xl space-y-6"><h2 className="text-2xl font-semibold">接種歴が分からなくても、まずご相談ください。</h2><CtaGroup /><NoticeCard compact /></div></ContentSection>
+  </PageShell>;
 }
+
