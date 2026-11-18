@@ -17,7 +17,7 @@ export default function Home() {
         <div className="mx-auto flex min-h-[72vh] w-full max-w-6xl flex-col justify-center px-6 py-16 sm:px-8 sm:py-20 lg:px-10">
           <div className="max-w-4xl">
             <p className="inline-flex rounded-full border border-teal-200 bg-white/80 px-4 py-2 text-sm font-medium text-teal-800 shadow-sm">
-              MR・HPVの接種と費用の事前相談を受付中
+              第0期準備中：MRを優先・HPVは相談とニーズ調査
             </p>
             <h1 className="mt-8 text-4xl font-semibold tracking-normal text-slate-950 sm:text-6xl">
               受けられなかったワクチンを、今、自分の意思で。
@@ -33,15 +33,15 @@ export default function Home() {
                 子どもの頃に接種の機会を逃した方や、接種歴が分からない方へ。医療機関で相談する前の情報整理と、費用の悩みに向き合います。
               </p>
               <p>
-                現在は、まず5名程度を目安とする第0期の事前相談・ニーズ調査です。接種するか迷っている段階でもご相談いただけます。
+                現在、第0期パイロットの事前相談体制を整えています。MRワクチンの接種費用支援を優先して検討し、HPVについても接種歴や費用のお悩みを伺います。接種するか迷っている段階でもご相談いただけます。
               </p>
             </div>
             <p className="mt-5 max-w-3xl rounded-lg border border-teal-100 bg-white/80 p-5 text-base leading-8 text-slate-700 shadow-sm">
-              費用補助は個別に検討します。補助を希望する方は予約・支払い前にご相談いただき、接種前に対象費用・回数・上限額をご確認ください。
+              MRの費用補助を優先的に検討しています。HPVは相談・ニーズ調査のみで、第0期の費用補助は予定・確約していません。補助を希望する方は予約・支払い前にご相談いただき、接種前に対象費用・回数・上限額をご確認ください。
             </p>
             <div className="mt-10 space-y-5">
               <CtaGroup />
-              <p className="text-sm leading-7 text-slate-600">リンク先はGoogleフォームです。送信だけでは補助は決まりません。</p>
+              <p className="text-sm leading-7 text-slate-600">フォームの更新・確認が終わり次第、ご案内します。相談だけでは補助は決まりません。</p>
               <NoticeCard compact />
             </div>
           </div>

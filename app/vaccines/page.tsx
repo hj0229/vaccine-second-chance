@@ -83,12 +83,18 @@ export default function VaccinesPage() {
     <ContentSection>
       <InfoCard title="国の公費制度と、このプロジェクトの補助は別です">
         <p>国のHPVキャッチアップ接種の経過措置は、2026年3月31日で終了しています。自治体独自の助成の有無・条件は、お住まいの自治体に確認してください。</p>
-        <p className="mt-3">本プロジェクトは国・自治体の制度とは別の準備プロジェクトです。相談を受け付けていますが、補助は個別に検討し、接種前に対象費用・回数・上限額を確認します。</p>
+        <p className="mt-3">本プロジェクトは国・自治体の制度とは別の準備プロジェクトです。MRの費用補助を優先的に検討しています。HPVは相談・ニーズ調査のみで、第0期の費用補助は予定・確約していません。MRで補助を行う場合は、接種前に対象費用・回数・上限額を確認します。</p>
         <Sources ids={["catchup"]} />
       </InfoCard>
     </ContentSection>
     <ContentSection tone="slate">
       <div className="mx-auto max-w-3xl space-y-6"><h2 className="text-2xl font-semibold">迷っている段階でも、ご相談いただけます。</h2><p className="text-base leading-8 text-slate-700">接種歴や困りごとの整理、費用補助の方針を案内します。診断や接種可否の判断、医療機関の紹介の確約は行いません。</p><CtaGroup /><NoticeCard compact /></div>
+    </ContentSection>
+    <ContentSection>
+      <InfoCard title="接種後に気になる症状がある場合と救済制度">
+        <p>体調の変化がある場合は、接種した医療機関などへ相談してください。制度は実際の接種区分によって異なります。定期・臨時接種は予防接種健康被害救済制度、任意接種はPMDAの医薬品副作用被害救済制度の対象となり得ます。給付にはそれぞれ要件・審査があり、自動的に給付されるものではありません。基金による費用補助があっても接種区分が変わるわけではありません。</p>
+        <p className="mt-3 text-sm leading-7">根拠：<a className="underline" href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/vaccine_kenkouhigaikyuusai.html">厚生労働省・予防接種健康被害救済制度</a> ／ <a className="underline" href="https://www.pmda.go.jp/relief-services/adr-sufferers/0032.html">PMDA・任意接種の取扱いと対象外要件</a></p>
+      </InfoCard>
     </ContentSection>
     <ContentSection>
       <SectionHeading as="h2" label="参考資料" title="公式情報で確認する"><p>制度や推奨は変更される場合があります。国内の制度は厚生労働省と自治体の最新案内を確認してください。</p></SectionHeading>

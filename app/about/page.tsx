@@ -120,7 +120,7 @@ export default function AboutPage() {
         <InfoCard title="運営について">
           <p>運営：成人キャッチアップワクチン基金 / Vaccine Second Chance Fund Japan 設立準備プロジェクト</p>
           <p>代表：田中寛顕（小児科専門医）</p>
-          <p>現在は少人数の事前相談を通じて、支援の仕組みを整える準備段階です。寄付受付は準備中です。</p>
+          <p>現在は第0期準備中です。MRの費用補助を優先的に検討し、HPVは相談・ニーズ調査を継続します。実施人数・開始日・補助条件は未確定です。寄付受付は準備中です。</p>
           <p>お問い合わせ：<a className="break-all underline underline-offset-4" href={`mailto:${email}`}>{email}</a></p>
         </InfoCard>
         <div className="mt-6"><CtaGroup /></div>
